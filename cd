@@ -1,0 +1,47 @@
+#!/bin/bash
+#SBATCH --account=def-biozahed
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1
+#SBATCH --mem=42G
+#SBATCH --time=72:00:00
+#SBATCH --output=bindcraft_%j.log
+
+# Load required modules
+module purge
+module load python/3.10 cuda
+
+# Go to the directory where the job was submitted
+cd $SLURM_SUBMIT_DIR
+
+# Parse arguments
+SETTINGS=""
+FILTERS=""
+ADVANCED=""
+
+TEMP=$(getopt -o s:f:a: --long settings:,filters:,advanced: -n 'bindcraft.slurm' -- "$@")
+eval set -- "$TEMP"
+
+while true; do
+    case "$1" in
+        -s|--settings) SETTINGS="$2"; shift 2 ;;
+        -f|--filters) FILTERS="$2"; shift 2 ;;
+        -a|--advanced) ADVANCED="$2"; shift 2 ;;
+        --) shift; break ;;
+        *) echo "Invalid option"; exit 1 ;;
+    esac
+done
+
+if [ -z "$SETTINGS" ]; then
+    echo "ERROR: --settings is required"
+    exit 1
+fi
+
+echo "Running BindCraft from: $(pwd)"
+
+python bindcraft.py \
+  --settings "$SETTINGS" \
+  --filters "$FILTERS" \
+  --advanced "$ADVANCED"
+
