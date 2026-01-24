@@ -1,7 +1,7 @@
 {
-    "design_path": "/Users/emilyruby/Desktop/BindCraft/6Y5F/Results/",
+    "design_path": "/workspace/BindCraft/6Y5F/Results/",
     "binder_name": "6Y5F",
-    "starting_pdb": "/Users/emilyruby/Desktop/BindCraft/6Y5F/6Y5F.pdb",
+    "starting_pdb": "/workspace/BindCraft/6Y5F/6Y5F.pdb",
     "chains": "A",
     "target_hotspot_residues": "",
     "lengths": [30, 120],
