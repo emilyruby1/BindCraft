@@ -1,0 +1,9 @@
+{
+    "design_path": "/workspace/BindCraft/Results/Hantavirus/",
+    "binder_name": "Hantavirus",
+    "starting_pdb": "/workspace/BindCraft/Targets/Hantavirus/Hantavirus.pdb",
+    "chains": "A",
+    "target_hotspot_residues": "",
+    "lengths": [30, 120],
+    "number_of_final_designs": 5
+}
