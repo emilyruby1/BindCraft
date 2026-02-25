@@ -1,6 +1,6 @@
 {
     "design_path": "/workspace/BindCraft/Results/EBV/",
-    "binder_name": "EBV_trimmed",
+    "binder_name": "EBV_Trimmed",
     "starting_pdb": "/workspace/BindCraft/Targets/EBV/EBV_trimmed.pdb",
     "chains": "A",
     "target_hotspot_residues": "",
