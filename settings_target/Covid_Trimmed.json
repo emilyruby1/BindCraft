@@ -1,0 +1,11 @@
+
+{
+    "design_path": "/workspace/BindCraft/Results/Covid",
+    "binder_name": "Covid_Trimmed",
+    "starting_pdb": "/workspace/BindCraft/Targets/Covid/Covid_Trimmed.pdb",
+    "chains": "A",
+    "target_hotspot_residues": "",
+    "lengths": [30, 120],
+    "number_of_final_designs": 5
+}
+
